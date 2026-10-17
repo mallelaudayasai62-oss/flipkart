@@ -3,127 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-
-type Product = {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  originalPrice: number;
-  rating: string;
-  badge: string;
-  image: string;
-  color: string;
-};
+import { categories, products, type Product } from "@/lib/catalog";
 
 type CartItem = Product & { quantity: number };
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: "SoundPods Pro wireless earbuds",
-    category: "Electronics",
-    price: 2499,
-    originalPrice: 4999,
-    rating: "4.6",
-    badge: "BESTSELLER",
-    image:
-      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=85",
-    color: "#f2eee8",
-  },
-  {
-    id: 2,
-    name: "Everyday Classic analog watch",
-    category: "Fashion",
-    price: 1899,
-    originalPrice: 3599,
-    rating: "4.4",
-    badge: "TRENDING",
-    image:
-      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85",
-    color: "#eee9e2",
-  },
-  {
-    id: 3,
-    name: "Studio headphones, wireless edition",
-    category: "Electronics",
-    price: 3299,
-    originalPrice: 5999,
-    rating: "4.7",
-    badge: "TOP RATED",
-    image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
-    color: "#f1e9e3",
-  },
-  {
-    id: 4,
-    name: "Soft-knit everyday tote bag",
-    category: "Fashion",
-    price: 1299,
-    originalPrice: 2199,
-    rating: "4.3",
-    badge: "JUST IN",
-    image:
-      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85",
-    color: "#f0e9e0",
-  },
-  {
-    id: 5,
-    name: "Cloud comfort running sneakers",
-    category: "Fashion",
-    price: 2799,
-    originalPrice: 4499,
-    rating: "4.5",
-    badge: "POPULAR",
-    image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
-    color: "#f2e8e5",
-  },
-  {
-    id: 6,
-    name: "Instant camera for little moments",
-    category: "Electronics",
-    price: 6499,
-    originalPrice: 8999,
-    rating: "4.8",
-    badge: "EDITOR'S PICK",
-    image:
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85",
-    color: "#ecebe7",
-  },
-  {
-    id: 7,
-    name: "Minimal ceramic table lamp",
-    category: "Home",
-    price: 1599,
-    originalPrice: 2699,
-    rating: "4.5",
-    badge: "HOME FAVOURITE",
-    image:
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85",
-    color: "#efeae4",
-  },
-  {
-    id: 8,
-    name: "Botanical skincare starter set",
-    category: "Beauty",
-    price: 999,
-    originalPrice: 1599,
-    rating: "4.6",
-    badge: "GLOW TIME",
-    image:
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85",
-    color: "#efebe3",
-  },
-];
-
-const categories = [
-  { name: "All finds", icon: "✳" },
-  { name: "Electronics", icon: "⌁" },
-  { name: "Fashion", icon: "◇" },
-  { name: "Home", icon: "⌂" },
-  { name: "Beauty", icon: "✦" },
-];
 
 const money = (amount: number) =>
   new Intl.NumberFormat("en-IN", {
@@ -139,8 +21,12 @@ export default function Home() {
   const [cartOpen, setCartOpen] = useState(false);
   const [notice, setNotice] = useState("");
   const [ready, setReady] = useState(false);
+  const [demoSignedIn, setDemoSignedIn] = useState(false);
 
   useEffect(() => {
+    setDemoSignedIn(
+      window.localStorage.getItem("flipkart-demo-session") === "demo-shopper",
+    );
     const savedCart = window.localStorage.getItem("flipkart-cart");
     if (savedCart) {
       try {
@@ -242,7 +128,7 @@ export default function Home() {
         <nav className="header-actions" aria-label="Main navigation">
           <Link className="login-link" href="/login">
             <span className="person-icon" aria-hidden="true">♙</span>
-            <span>Login</span>
+            <span>{demoSignedIn ? "Demo account" : "Login"}</span>
           </Link>
           <button
             className="cart-trigger"
@@ -428,7 +314,7 @@ export default function Home() {
                         <Image src={item.image} alt="" fill sizes="84px" />
                       </div>
                       <div className="cart-item-info">
-                        <span>{item.category}</span><b>{item.name}</b><strong>{money(item.price)}</strong>
+                        <span>{item.category}</span><b>{item.name}</b><strong>{money(item.price * item.quantity)}</strong>
                         <div className="quantity-control">
                           <button type="button" onClick={() => updateQuantity(item.id, -1)} aria-label="Decrease quantity">−</button>
                           <span>{item.quantity}</span>

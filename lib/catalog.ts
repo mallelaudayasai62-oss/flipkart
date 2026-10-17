@@ -1,0 +1,412 @@
+export type Product = {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  originalPrice: number;
+  rating: string;
+  badge: string;
+  image: string;
+  color: string;
+};
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: 'SoundPods Pro wireless earbuds',
+    category: 'Electronics',
+    price: 2499,
+    originalPrice: 4999,
+    rating: '4.6',
+    badge: 'BESTSELLER',
+    image:
+      'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=85',
+    color: '#f2eee8',
+  },
+  {
+    id: 2,
+    name: 'Studio wireless headphones',
+    category: 'Electronics',
+    price: 3299,
+    originalPrice: 5999,
+    rating: '4.7',
+    badge: 'TOP RATED',
+    image:
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85',
+    color: '#f1e9e3',
+  },
+  {
+    id: 3,
+    name: 'Instant camera for little moments',
+    category: 'Electronics',
+    price: 6499,
+    originalPrice: 8999,
+    rating: '4.8',
+    badge: "EDITOR'S PICK",
+    image:
+      'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85',
+    color: '#ecebe7',
+  },
+  {
+    id: 4,
+    name: 'Everyday power bank 20,000 mAh',
+    category: 'Electronics',
+    price: 1799,
+    originalPrice: 2499,
+    rating: '4.5',
+    badge: 'TRAVEL READY',
+    image:
+      'https://images.unsplash.com/photo-1609592806596-b43bada2f3c3?auto=format&fit=crop&w=900&q=85',
+    color: '#e9eee9',
+  },
+  {
+    id: 5,
+    name: 'Everyday Classic analog watch',
+    category: 'Fashion',
+    price: 1899,
+    originalPrice: 3599,
+    rating: '4.4',
+    badge: 'TRENDING',
+    image:
+      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85',
+    color: '#eee9e2',
+  },
+  {
+    id: 6,
+    name: 'Soft-knit everyday tote bag',
+    category: 'Fashion',
+    price: 1299,
+    originalPrice: 2199,
+    rating: '4.3',
+    badge: 'JUST IN',
+    image:
+      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85',
+    color: '#f0e9e0',
+  },
+  {
+    id: 7,
+    name: 'Cloud comfort running sneakers',
+    category: 'Fashion',
+    price: 2799,
+    originalPrice: 4499,
+    rating: '4.5',
+    badge: 'POPULAR',
+    image:
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85',
+    color: '#f2e8e5',
+  },
+  {
+    id: 8,
+    name: 'Weekend canvas backpack',
+    category: 'Fashion',
+    price: 2199,
+    originalPrice: 3299,
+    rating: '4.4',
+    badge: 'EVERYDAY FAVE',
+    image:
+      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85',
+    color: '#e8ece7',
+  },
+  {
+    id: 9,
+    name: 'Minimal ceramic table lamp',
+    category: 'Home',
+    price: 1599,
+    originalPrice: 2699,
+    rating: '4.5',
+    badge: 'HOME FAVOURITE',
+    image:
+      'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=85',
+    color: '#efeae4',
+  },
+  {
+    id: 10,
+    name: 'Hand-finished ceramic dinner set',
+    category: 'Home',
+    price: 2399,
+    originalPrice: 3499,
+    rating: '4.6',
+    badge: 'HANDMADE',
+    image:
+      'https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=900&q=85',
+    color: '#f0ece5',
+  },
+  {
+    id: 11,
+    name: 'Soft cotton cushion covers',
+    category: 'Home',
+    price: 699,
+    originalPrice: 1199,
+    rating: '4.2',
+    badge: 'SET OF 2',
+    image:
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=85',
+    color: '#ebe8e0',
+  },
+  {
+    id: 12,
+    name: 'Botanical skincare starter set',
+    category: 'Beauty',
+    price: 999,
+    originalPrice: 1599,
+    rating: '4.6',
+    badge: 'GLOW TIME',
+    image:
+      'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85',
+    color: '#efebe3',
+  },
+  {
+    id: 13,
+    name: 'Daily hydration face serum',
+    category: 'Beauty',
+    price: 749,
+    originalPrice: 1099,
+    rating: '4.5',
+    badge: 'CLEAN BEAUTY',
+    image:
+      'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=85',
+    color: '#f1eae4',
+  },
+  {
+    id: 14,
+    name: 'Everyday SPF 50 sunscreen',
+    category: 'Beauty',
+    price: 499,
+    originalPrice: 699,
+    rating: '4.4',
+    badge: 'DAILY ESSENTIAL',
+    image:
+      'https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85',
+    color: '#f0eee7',
+  },
+  {
+    id: 15,
+    name: 'Nova 5G smartphone 128 GB',
+    category: 'Mobiles',
+    price: 14999,
+    originalPrice: 18999,
+    rating: '4.5',
+    badge: '5G READY',
+    image:
+      'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=85',
+    color: '#e8edf0',
+  },
+  {
+    id: 16,
+    name: 'Slim-fit phone case',
+    category: 'Mobiles',
+    price: 399,
+    originalPrice: 699,
+    rating: '4.3',
+    badge: 'NEW COLORS',
+    image:
+      'https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=900&q=85',
+    color: '#eeece7',
+  },
+  {
+    id: 17,
+    name: 'Fast-charge USB-C adapter',
+    category: 'Mobiles',
+    price: 899,
+    originalPrice: 1299,
+    rating: '4.6',
+    badge: 'FAST CHARGE',
+    image:
+      'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=900&q=85',
+    color: '#edf0eb',
+  },
+  {
+    id: 18,
+    name: 'Air-fry oven with family basket',
+    category: 'Appliances',
+    price: 5999,
+    originalPrice: 8499,
+    rating: '4.5',
+    badge: 'KITCHEN PICK',
+    image:
+      'https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=900&q=85',
+    color: '#ebece8',
+  },
+  {
+    id: 19,
+    name: 'Compact espresso coffee maker',
+    category: 'Appliances',
+    price: 7499,
+    originalPrice: 9999,
+    rating: '4.7',
+    badge: 'COFFEE TIME',
+    image:
+      'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=900&q=85',
+    color: '#eee9e2',
+  },
+  {
+    id: 20,
+    name: 'Portable blender for smoothies',
+    category: 'Appliances',
+    price: 1299,
+    originalPrice: 1999,
+    rating: '4.2',
+    badge: 'QUICK & EASY',
+    image:
+      'https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&w=900&q=85',
+    color: '#e8eee8',
+  },
+  {
+    id: 21,
+    name: 'Grip yoga mat with carry strap',
+    category: 'Sports',
+    price: 1199,
+    originalPrice: 1799,
+    rating: '4.4',
+    badge: 'MOVE MORE',
+    image:
+      'https://images.unsplash.com/photo-1592432678016-e910b452f9a2?auto=format&fit=crop&w=900&q=85',
+    color: '#e6ece7',
+  },
+  {
+    id: 22,
+    name: 'Adjustable home dumbbell pair',
+    category: 'Sports',
+    price: 2499,
+    originalPrice: 3499,
+    rating: '4.5',
+    badge: 'HOME GYM',
+    image:
+      'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85',
+    color: '#ecebe6',
+  },
+  {
+    id: 23,
+    name: 'Trail-ready insulated bottle',
+    category: 'Sports',
+    price: 799,
+    originalPrice: 1199,
+    rating: '4.6',
+    badge: 'HYDRATE',
+    image:
+      'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85',
+    color: '#e8eeea',
+  },
+  {
+    id: 24,
+    name: 'The slow mornings journal',
+    category: 'Books',
+    price: 349,
+    originalPrice: 499,
+    rating: '4.8',
+    badge: "EDITOR'S PICK",
+    image:
+      'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=85',
+    color: '#eee9e1',
+  },
+  {
+    id: 25,
+    name: 'Hardcover stories for the weekend',
+    category: 'Books',
+    price: 599,
+    originalPrice: 899,
+    rating: '4.7',
+    badge: 'STAFF FAVE',
+    image:
+      'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=85',
+    color: '#e9e9e3',
+  },
+  {
+    id: 26,
+    name: 'Pastel desk stationery set',
+    category: 'Books',
+    price: 449,
+    originalPrice: 699,
+    rating: '4.3',
+    badge: 'BACK TO DESK',
+    image:
+      'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85',
+    color: '#f0e9e4',
+  },
+  {
+    id: 27,
+    name: 'Small-batch roasted coffee beans',
+    category: 'Grocery',
+    price: 599,
+    originalPrice: 799,
+    rating: '4.6',
+    badge: 'FRESH ROAST',
+    image:
+      'https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=85',
+    color: '#eee8df',
+  },
+  {
+    id: 28,
+    name: 'Breakfast tea discovery box',
+    category: 'Grocery',
+    price: 399,
+    originalPrice: 599,
+    rating: '4.5',
+    badge: 'SIP & SLOW',
+    image:
+      'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=85',
+    color: '#e8ece4',
+  },
+  {
+    id: 29,
+    name: 'Crunchy snack-time hamper',
+    category: 'Grocery',
+    price: 799,
+    originalPrice: 1099,
+    rating: '4.4',
+    badge: 'SHARE THE JOY',
+    image:
+      'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=900&q=85',
+    color: '#f1e9df',
+  },
+  {
+    id: 30,
+    name: 'Wooden building blocks set',
+    category: 'Toys',
+    price: 899,
+    originalPrice: 1299,
+    rating: '4.7',
+    badge: 'PLAY & LEARN',
+    image:
+      'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=900&q=85',
+    color: '#ede8df',
+  },
+  {
+    id: 31,
+    name: 'Little explorer puzzle kit',
+    category: 'Toys',
+    price: 549,
+    originalPrice: 799,
+    rating: '4.5',
+    badge: 'FAMILY FAVE',
+    image:
+      'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?auto=format&fit=crop&w=900&q=85',
+    color: '#e7ece5',
+  },
+  {
+    id: 32,
+    name: 'Soft friends plush bear',
+    category: 'Toys',
+    price: 699,
+    originalPrice: 999,
+    rating: '4.8',
+    badge: 'EXTRA CUDDLY',
+    image:
+      'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=900&q=85',
+    color: '#f0e8e3',
+  },
+];
+
+export const categories = [
+  { name: 'All finds', icon: '✳' },
+  { name: 'Electronics', icon: '⌁' },
+  { name: 'Fashion', icon: '◇' },
+  { name: 'Mobiles', icon: '▯' },
+  { name: 'Appliances', icon: '⌂' },
+  { name: 'Home', icon: '⌑' },
+  { name: 'Beauty', icon: '✦' },
+  { name: 'Sports', icon: '↗' },
+  { name: 'Books', icon: '▤' },
+  { name: 'Grocery', icon: '❋' },
+  { name: 'Toys', icon: '☆' },
+];
